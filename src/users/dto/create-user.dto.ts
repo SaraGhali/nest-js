@@ -2,11 +2,12 @@ import { IsString, IsNotEmpty, IsInt, Min, IsOptional } from 'class-validator';
 
 export class CreateUserDto {
     @IsString()
-    @IsNotEmpty()
+    @IsNotEmpty({ message: 'First name is required' })
     firstName: string;
 
+
     @IsString()
-    @IsNotEmpty()
+    @IsNotEmpty({ message: 'Last name is required' })
     lastName: string;
 
     @IsInt()
